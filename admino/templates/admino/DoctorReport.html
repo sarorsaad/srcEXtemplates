@@ -1,0 +1,118 @@
+{% extends 'layouts/dashboard_base.html' %}
+{% block content %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 651.844px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">
+          <i class="nav-icon fas fa-calculator"></i>
+          Accounting
+        </h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item">
+            <a href="https://radiology.extremelab.tech/admin">Home</a></li>
+          <li class="breadcrumb-item active">Doctor report</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <div class="card card-primary">
+  <!-- card-header -->
+  <div class="card-header">
+    <h3 class="card-title">Doctor report</h3>
+  </div>
+  <!-- /.card-header -->
+  <!-- card-body -->
+  <div class="card-body">
+
+    <!-- Filtering Form -->
+    <div id="accordion">
+    <div class="card card-info">
+        <a data-toggle="collapse" data-parent="#accordion" href="https://radiology.extremelab.tech/admin/doctor_report#collapseOne" class="btn btn-primary collapsed" aria-expanded="false">
+            <i class="fas fa-filter"></i> Filters
+        </a>
+        <div id="collapseOne" class="panel-collapse in collapse show">
+            <div class="card-body">
+                <form method="get" action="https://radiology.extremelab.tech/admin/generate_doctor_report" novalidate="novalidate">
+                    <div class="row">
+
+                        <!-- date range -->
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <label>Date range:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="far fa-calendar-alt"></i>
+                                    </span>
+                                </div>
+                                <input type="text" name="date" class="form-control float-right datepickerrange" id="date" required="">
+                            </div>
+                        </div>
+                        <!-- \date range -->
+
+                        <!-- doctors -->
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="form-group">
+                                <label>Doctor</label>
+                                <select class="form-control select2-hidden-accessible" name="doctor_id" id="doctor" required="" data-select2-id="doctor" tabindex="-1" aria-hidden="true">
+                                                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-doctor-container"><span class="select2-selection__rendered" id="select2-doctor-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Doctor</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <!-- \doctors -->
+
+                        <!-- Show in report -->
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <label for="">Show Details</label>
+                            <ul class="pl-0" style="list-style-type: none">
+                                <li>
+                                    <input type="checkbox" name="show_groups" id="show_groups">
+                                    <label for="show_groups">Show Group tests</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="show_payments" id="show_payments">
+                                    <label for="show_payments">Show Payments</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- \Show in report -->
+
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 d-flex align-items-center">
+                            <button type="submit" class="btn btn-primary form-control">
+                                <i class="fas fa-cog"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>    <!-- Filtering Form -->
+
+      </div>
+  <!-- /.card-body -->
+
+  <!-- card-footer -->
+    <!-- /.card-footer -->
+</div>
+
+          <input type="hidden" id="system_currency" value="USD">
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+
+    </div>
+    <!-- /.content-wrapper -->
+    {% endblock content %}
+    

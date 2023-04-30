@@ -1,0 +1,249 @@
+
+{% extends 'layouts/dashboard_base.html' %}
+{% block content %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 651.844px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">
+            <i class="nav-icon fas fa-user-injured"></i>
+            Patients
+          </h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="https://radiology.extremelab.tech/admin">Home</a></li>
+            <li class="breadcrumb-item active">Patients</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <div class="card card-primary card-outline">
+    <div class="card-header">
+      <h3 class="card-title">Patients Table</h3>
+            <a href="https://radiology.extremelab.tech/admin/patients/create" class="btn btn-primary btn-sm float-right">
+       <i class="fa fa-plus"></i> Create 
+      </a>
+          </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+     
+      <div class="row">
+        <div class="col-lg-12">
+          <!-- Tools -->
+          <div id="accordion">
+            <div class="card card-info">
+              <a data-toggle="collapse" data-parent="#accordion" href="https://radiology.extremelab.tech/admin/patients#collapseOne" class="btn btn-primary collapsed" aria-expanded="false">
+                <i class="fas fa-file-excel"></i>
+                Import / Export
+              </a>
+              <div id="collapseOne" class="panel-collapse in collapse">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-12 text-center">
+                      <a class="btn btn-success" href="https://radiology.extremelab.tech/admin/patients_export">
+                        <i class="fa fa-file-excel"></i>
+                        Export
+                      </a>
+                      <a class="btn btn-success" href="https://radiology.extremelab.tech/admin/patients_download_template">
+                        <i class="fa fa-file-excel"></i>
+                        Download template
+                      </a>
+                    </div>
+                    <div class="col-lg-12">
+                      <!-- import form -->
+                      <form action="https://radiology.extremelab.tech/admin/patients_import" method="POST" enctype="multipart/form-data" novalidate="novalidate">
+                        <input type="hidden" name="_token" value="HdhAKrhVtNgNr8kv5BWmLxQoZ9cxh9t3F48APRog">                        <div class="row mt-3">
+                          <div class="col-lg-12">
+                            <div class="card card-primary">
+                              <div class="card-header">
+                                <h5 class="card-title">
+                                    Import
+                                </h5>
+                              </div>
+                              <div class="card-body">
+                                <div class="input-group">
+                                  <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="import" required="">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">
+                                  <i class="fa fa-check"></i>
+                                  Import
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                      <!-- /import form -->
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- \Tools -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 table-responsive">
+          <div id="patients_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-4"><div class="dataTables_length" id="patients_table_length"><label>Show <select name="patients_table_length" aria-controls="patients_table" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records</label></div></div><div class="col-sm-4"><div class="dt-buttons btn-group flex-wrap">          <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="patients_table" type="button" title="Copy"><span><i class="fas fa-copy"></i> Copy</span></button> <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="patients_table" type="button" title="Excel"><span><i class="fas fa-file-excel"></i> Excel</span></button> <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="patients_table" type="button" title="CSV"><span><i class="fas fa-file-csv"></i> CVS</span></button> <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="patients_table" type="button" title="PDF"><span><i class="fas fa-file-pdf"></i> PDF</span></button> <div class="btn-group"><button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis" tabindex="0" aria-controls="patients_table" type="button" title="PDF" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-eye"></i></span></button></div> </div></div><div class="col-sm-4"><div id="patients_table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="patients_table"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="patients_table" class="table table-striped table-hover table-bordered dataTable no-footer" width="100%" role="grid" aria-describedby="patients_table_info" style="width: 100%;"><thead>
+            <tr role="row"><th width="10px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 14px;">#</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 108px;">Code</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 118px;">Name</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 111px;">Phone</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 232px;">Email</th><th width="100px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 100px;">Total</th><th width="100px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 100px;">Paid</th><th width="100px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 100px;">Due</th><th width="100px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 100px;">Action</th></tr>
+            </thead>
+            
+            <tbody>
+                
+            <tr role="row" class="odd"><td>1</td><td>1593914720</td><td>kumar jsjs</td><td>+249 907084881</td><td>text@gmail.com</td><td>108611.4 USD</td><td>47751.4 USD</td><td><span class="text-danger text-bold">
+        60860 USD
+    </span>
+</td><td><a class="btn btn-primary btn-sm" href="https://radiology.extremelab.tech/admin/patients/1/edit">
+        <i class="fa fa-edit" aria-hidden="true"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/patients/1" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_patient">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="even"><td>2</td><td>1634787961192</td><td>Ahmed Ali</td><td>917006701090</td><td>ahmed@gmail.com</td><td>101983.15 USD</td><td>20089.8 USD</td><td><span class="text-danger text-bold">
+        81893.35 USD
+    </span>
+</td><td><a class="btn btn-primary btn-sm" href="https://radiology.extremelab.tech/admin/patients/2/edit">
+        <i class="fa fa-edit" aria-hidden="true"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/patients/2" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_patient">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="odd"><td>3</td><td>163533832569</td><td>b2</td><td>4444455555</td><td>admin@gmail.com</td><td>25766.6 USD</td><td>13440 USD</td><td><span class="text-danger text-bold">
+        12326.6 USD
+    </span>
+</td><td><a class="btn btn-primary btn-sm" href="https://radiology.extremelab.tech/admin/patients/3/edit">
+        <i class="fa fa-edit" aria-hidden="true"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/patients/3" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_patient">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="even"><td>4</td><td>163534444529</td><td>Ran Nhi</td><td>96385274</td><td>Yidho@in.in</td><td>19632.95 USD</td><td>1250 USD</td><td><span class="text-danger text-bold">
+        18382.95 USD
+    </span>
+</td><td><a class="btn btn-primary btn-sm" href="https://radiology.extremelab.tech/admin/patients/4/edit">
+        <i class="fa fa-edit" aria-hidden="true"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/patients/4" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_patient">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="odd"><td>5</td><td>1635576016991</td><td>jose</td><td>800555522</td><td>preciosrd.com@gmail.com</td><td>17057 USD</td><td>15440 USD</td><td><span class="text-danger text-bold">
+        1617 USD
+    </span>
+</td><td><a class="btn btn-primary btn-sm" href="https://radiology.extremelab.tech/admin/patients/5/edit">
+        <i class="fa fa-edit" aria-hidden="true"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/patients/5" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_patient">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="even"><td>6</td><td>1635788398191</td><td>Rashid Siddique</td><td>+923000533388</td><td>rashidsiddique03@gmail.com</td><td>10009 USD</td><td>999 USD</td><td><span class="text-danger text-bold">
+        9010 USD
+    </span>
+</td><td><a class="btn btn-primary btn-sm" href="https://radiology.extremelab.tech/admin/patients/6/edit">
+        <i class="fa fa-edit" aria-hidden="true"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/patients/6" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_patient">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="odd"><td>7</td><td>1635806620151</td><td>Khaled Elfishawy</td><td>+201095055833</td><td>khalidelfishawy2@gmail.com</td><td>0 USD</td><td>0 USD</td><td><span class="text-success">
+        0 USD
+    </span>
+</td><td><a class="btn btn-primary btn-sm" href="https://radiology.extremelab.tech/admin/patients/7/edit">
+        <i class="fa fa-edit" aria-hidden="true"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/patients/7" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_patient">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="even"><td>8</td><td>1635883544699</td><td>abdelrhman mosa</td><td>01204804336</td><td>abdomosa01@gmail.com</td><td>200 USD</td><td>0 USD</td><td><span class="text-danger text-bold">
+        200 USD
+    </span>
+</td><td><a class="btn btn-primary btn-sm" href="https://radiology.extremelab.tech/admin/patients/8/edit">
+        <i class="fa fa-edit" aria-hidden="true"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/patients/8" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_patient">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="odd"><td>9</td><td>1636022604980</td><td>OLUWASEUN</td><td>08130170906</td><td>spreadwebng@gmail.com</td><td>580 USD</td><td>900 USD</td><td><span class="text-success">
+        -320 USD
+    </span>
+</td><td><a class="btn btn-primary btn-sm" href="https://radiology.extremelab.tech/admin/patients/9/edit">
+        <i class="fa fa-edit" aria-hidden="true"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/patients/9" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_patient">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="even"><td>10</td><td>1636440720591</td><td>Henry Munroe</td><td>9864262963</td><td>aadarsha@chitwancollection.com</td><td>0 USD</td><td>0 USD</td><td><span class="text-success">
+        0 USD
+    </span>
+</td><td><a class="btn btn-primary btn-sm" href="https://radiology.extremelab.tech/admin/patients/10/edit">
+        <i class="fa fa-edit" aria-hidden="true"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/patients/10" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_patient">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr></tbody>
+          </table><div id="patients_table_processing" class="dataTables_processing card" style="display: none;">Processing...</div></div></div><div class="row"><div class="col-sm-4"><div class="dataTables_info" id="patients_table_info" role="status" aria-live="polite">Showing 1 to 10 of 153 records</div></div><div class="col-sm-8"><div class="dataTables_paginate paging_simple_numbers" id="patients_table_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="patients_table_previous"><a href="https://radiology.extremelab.tech/admin/patients#" aria-controls="patients_table" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="https://radiology.extremelab.tech/admin/patients#" aria-controls="patients_table" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/patients#" aria-controls="patients_table" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/patients#" aria-controls="patients_table" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/patients#" aria-controls="patients_table" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/patients#" aria-controls="patients_table" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item disabled" id="patients_table_ellipsis"><a href="https://radiology.extremelab.tech/admin/patients#" aria-controls="patients_table" data-dt-idx="6" tabindex="0" class="page-link">…</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/patients#" aria-controls="patients_table" data-dt-idx="7" tabindex="0" class="page-link">16</a></li><li class="paginate_button page-item next" id="patients_table_next"><a href="https://radiology.extremelab.tech/admin/patients#" aria-controls="patients_table" data-dt-idx="8" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+
+        </div>
+      </div>
+    </div>
+    <!-- /.card-body -->
+  </div>
+  {% endblock content %}

@@ -1,0 +1,313 @@
+{% extends 'layouts/dashboard_base.html' %}
+{% block content %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 651.844px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">
+                    <i class="fa fa-flag"></i>
+                    Reports
+                </h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="{% url 'account:login_base' %}">Home</a></li>
+                    <li class="breadcrumb-item active">Reports</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <div class="card card-primary card-outline">
+    <div class="card-header">
+        <h3 class="card-title">Reports Table</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <!-- filter -->
+        <div id="accordion">
+            <div class="card card-info">
+              <a data-toggle="collapse" data-parent="#accordion" href="https://radiology.extremelab.tech/admin/reports#collapseOne" class="btn btn-primary collapsed" aria-expanded="false">
+                <i class="fas fa-filter"></i> Filters
+              </a>
+              <div id="collapseOne" class="panel-collapse in collapse">
+                <div class="card-body">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                           <label for="filter_date">Date</label>
+                           <input type="text" class="form-control datepickerrange" id="filter_date" placeholder="Date">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="form-group">
+                         <label for="filter_status">Status</label>
+                         <select name="filter_status" id="filter_status" class="form-control select2 select2-hidden-accessible" data-select2-id="filter_status" tabindex="-1" aria-hidden="true">
+                            <option value="" selected="" data-select2-id="2">All</option>
+                            <option value="1">Done</option>
+                            <option value="0">Pending</option>
+                         </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-filter_status-container"><span class="select2-selection__rendered" id="select2-filter_status-container" role="textbox" aria-readonly="true" title="All">All</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                           <label for="filter_barcode">Barcode</label>
+                           <input type="text" class="form-control" id="filter_barcode" placeholder="Barcode">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- \filter -->
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <div id="reports_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-4"><div class="dataTables_length" id="reports_table_length"><label>Show <select name="reports_table_length" aria-controls="reports_table" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records</label></div></div><div class="col-sm-4"><div class="dt-buttons btn-group flex-wrap">          <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="reports_table" type="button" title="Copy"><span><i class="fas fa-copy"></i> Copy</span></button> <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="reports_table" type="button" title="Excel"><span><i class="fas fa-file-excel"></i> Excel</span></button> <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="reports_table" type="button" title="CSV"><span><i class="fas fa-file-csv"></i> CVS</span></button> <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="reports_table" type="button" title="PDF"><span><i class="fas fa-file-pdf"></i> PDF</span></button> <div class="btn-group"><button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis" tabindex="0" aria-controls="reports_table" type="button" title="PDF" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-eye"></i></span></button></div> </div></div><div class="col-sm-4"><div id="reports_table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="reports_table"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="reports_table" class="table table-striped table-hover table-bordered dataTable no-footer" width="100%" role="grid" aria-describedby="reports_table_info" style="width: 100%;"><thead>
+                        <tr role="row"><th width="10px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 20.875px;">#</th><th width="10px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 83.5px;">Barcode</th><th width="100px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 90.4688px;">Patient Code</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 47px;">Patient Name</th><th width="50px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 45.0469px;">Gender</th><th width="50px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 30.5625px;">Age</th><th width="50px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 90.4688px;">Phone</th><th width="200px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Tests</th><th width="100px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 31.3281px;">Date</th><th class="text-center sorting_disabled" width="10px" rowspan="1" colspan="1" style="width: 31.9219px;">Done</th><th class="text-center sorting_disabled" width="10px" rowspan="1" colspan="1" style="width: 42.4062px;">Signed</th><th width="50px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 54.375px;">Action</th></tr>
+                    </thead>
+                    
+                    <tbody>
+    
+                    <tr role="row" class="odd"><td>200</td><td>413783306999</td><td>1675675632160</td><td>Ramesh Krr</td><td>Male</td><td>4 Days</td><td>8788676758</td><td><ul class="pl-2">
+            <li class="">aasd</li>
+            <li class="">ABAN</li>
+            <li class="">bbd</li>
+            <li class="">Blood</li>
+            <li class="">Blood Group</li>
+    </ul></td><td>06-02-2023 09:27</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-cog"></i>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/reports/200/edit">
+               <i class="fa fa-flask" aria-hidden="true"></i>
+               Edit Report 
+            </a>
+                            <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/sign_report/200">
+               <i class="fas fa-signature" aria-hidden="true"></i>
+               Sign Report 
+            </a>
+                            <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/reports/200">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                Show
+            </a>
+            <a style="cursor: pointer" data-toggle="modal" data-target="#print_barcode_modal" class="dropdown-item print_barcode" group_id="200">
+                <i class="fa fa-barcode" aria-hidden="true"></i>
+                Print barcode
+                </a>
+                                    </div>
+</div></td></tr><tr role="row" class="even"><td>199</td><td>534086829907</td><td>163534444529</td><td>Ran Nhi</td><td>Male</td><td>14 Years</td><td>96385274</td><td><ul class="pl-2">
+            <li class=" text-success ">ANA Profile crt</li>
+            <li class="">Lipid Profile</li>
+            <li class="">Prova</li>
+    </ul></td><td>03-02-2023 07:35</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-cog"></i>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/reports/199/edit">
+               <i class="fa fa-flask" aria-hidden="true"></i>
+               Edit Report 
+            </a>
+                            <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/sign_report/199">
+               <i class="fas fa-signature" aria-hidden="true"></i>
+               Sign Report 
+            </a>
+                            <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/reports/199">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                Show
+            </a>
+            <a style="cursor: pointer" data-toggle="modal" data-target="#print_barcode_modal" class="dropdown-item print_barcode" group_id="199">
+                <i class="fa fa-barcode" aria-hidden="true"></i>
+                Print barcode
+                </a>
+                            <a target="_blank" href="https://wa.me/96385274?text=welcome%20Ran%20Nhi%20,%20tests%20report%20link%20is%20https://radiology.extremelab.tech/uploads/pdf/1675409744.pdf" class="dropdown-item">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    Send Report
+                </a>
+                                        <form action="https://radiology.extremelab.tech/admin/reports/send_report_mail/199" method="POST" class="d-inline">
+                <input type="hidden" name="_token" value="HdhAKrhVtNgNr8kv5BWmLxQoZ9cxh9t3F48APRog">                <button type="submit" class="dropdown-item">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    Send Report
+                </button>
+                </form>
+                        </div>
+</div></td></tr><tr role="row" class="odd"><td>198</td><td>838772450789</td><td>163534444529</td><td>Ran Nhi</td><td>Male</td><td>14 Years</td><td>96385274</td><td><ul class="pl-2">
+            <li class=" text-success ">Radiology Radiology</li>
+    </ul></td><td>27-01-2023 12:57</td><td><div class="text-center"><i class="fa fa-check-double text-success"></i></div>
+</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-cog"></i>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/reports/198/edit">
+               <i class="fa fa-flask" aria-hidden="true"></i>
+               Edit Report 
+            </a>
+                            <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/sign_report/198">
+               <i class="fas fa-signature" aria-hidden="true"></i>
+               Sign Report 
+            </a>
+                            <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/reports/198">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                Show
+            </a>
+            <a style="cursor: pointer" data-toggle="modal" data-target="#print_barcode_modal" class="dropdown-item print_barcode" group_id="198">
+                <i class="fa fa-barcode" aria-hidden="true"></i>
+                Print barcode
+                </a>
+                            <a target="_blank" href="https://wa.me/96385274?text=welcome%20Ran%20Nhi%20,%20tests%20report%20link%20is%20https://radiology.extremelab.tech/uploads/pdf/1675404974.pdf" class="dropdown-item">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    Send Report
+                </a>
+                                        <form action="https://radiology.extremelab.tech/admin/reports/send_report_mail/198" method="POST" class="d-inline">
+                <input type="hidden" name="_token" value="HdhAKrhVtNgNr8kv5BWmLxQoZ9cxh9t3F48APRog">                <button type="submit" class="dropdown-item">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    Send Report
+                </button>
+                </form>
+                        </div>
+</div></td></tr><tr role="row" class="even"><td>197</td><td>382603699794</td><td>1634787961192</td><td>Ahmed Ali</td><td>Male</td><td>1 Years</td><td>917006701090</td><td><ul class="pl-2">
+            <li class="">ABAN</li>
+            <li class="">Cardiology</li>
+    </ul></td><td>27-01-2023 12:49</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-cog"></i>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/reports/197/edit">
+               <i class="fa fa-flask" aria-hidden="true"></i>
+               Edit Report 
+            </a>
+                            <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/sign_report/197">
+               <i class="fas fa-signature" aria-hidden="true"></i>
+               Sign Report 
+            </a>
+                            <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/reports/197">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                Show
+            </a>
+            <a style="cursor: pointer" data-toggle="modal" data-target="#print_barcode_modal" class="dropdown-item print_barcode" group_id="197">
+                <i class="fa fa-barcode" aria-hidden="true"></i>
+                Print barcode
+                </a>
+                                    </div>
+</div></td></tr><tr role="row" class="odd"><td>196</td><td>628568416851</td><td>1635576016991</td><td>jose</td><td>Male</td><td>1 Years</td><td>800555522</td><td><ul class="pl-2">
+            <li class="">aasd</li>
+            <li class="">amphetamine</li>
+            <li class="">CBC</li>
+    </ul></td><td>14-01-2023 08:27</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-cog"></i>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/reports/196/edit">
+               <i class="fa fa-flask" aria-hidden="true"></i>
+               Edit Report 
+            </a>
+                            <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/sign_report/196">
+               <i class="fas fa-signature" aria-hidden="true"></i>
+               Sign Report 
+            </a>
+                            <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/reports/196">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                Show
+            </a>
+            <a style="cursor: pointer" data-toggle="modal" data-target="#print_barcode_modal" class="dropdown-item print_barcode" group_id="196">
+                <i class="fa fa-barcode" aria-hidden="true"></i>
+                Print barcode
+                </a>
+                                    </div>
+</div></td></tr><tr role="row" class="even"><td>195</td><td>332961079373</td><td>1673453988768</td><td>رافد الحاج</td><td>Male</td><td>28 Days</td><td>+967776180974</td><td><ul class="pl-2">
+            <li class=" text-success ">aasd</li>
+            <li class=" text-success ">ABAN</li>
+            <li class=" text-success ">CBC</li>
+    </ul></td><td>11-01-2023 16:20</td><td><div class="text-center"><i class="fa fa-check-double text-success"></i></div>
+</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-cog"></i>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/reports/195/edit">
+               <i class="fa fa-flask" aria-hidden="true"></i>
+               Edit Report 
+            </a>
+                            <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/sign_report/195">
+               <i class="fas fa-signature" aria-hidden="true"></i>
+               Sign Report 
+            </a>
+                            <a class="dropdown-item" href="https://radiology.extremelab.tech/admin/reports/195">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                Show
+            </a>
+            <a style="cursor: pointer" data-toggle="modal" data-target="#print_barcode_modal" class="dropdown-item print_barcode" group_id="195">
+                <i class="fa fa-barcode" aria-hidden="true"></i>
+                Print barcode
+                </a>
+                            <a target="_blank" href="https://wa.me/+967776180974?text=welcome%20%D8%B1%D8%A7%D9%81%D8%AF%20%D8%A7%D9%84%D8%AD%D8%A7%D8%AC%20,%20tests%20report%20link%20is%20https://radiology.extremelab.tech/uploads/pdf/1673454047.pdf" class="dropdown-item">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    Send Report
+                </a>
+                                        <form action="https://radiology.extremelab.tech/admin/reports/send_report_mail/195" method="POST" class="d-inline">
+                <input type="hidden" name="_token" value="HdhAKrhVtNgNr8kv5BWmLxQoZ9cxh9t3F48APRog">                <button type="submit" class="dropdown-item">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    Send Report
+                </button>
+                </form>
+                        </div>
+</div></td></tr></tbody>
+                </table><div id="reports_table_processing" class="dataTables_processing card" style="display: none;">Processing...</div></div></div><div class="row"><div class="col-sm-4"><div class="dataTables_info" id="reports_table_info" role="status" aria-live="polite">Showing 1 to 6 of 6 records</div></div><div class="col-sm-8"><div class="dataTables_paginate paging_simple_numbers" id="reports_table_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="reports_table_previous"><a href="https://radiology.extremelab.tech/admin/reports#" aria-controls="reports_table" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="https://radiology.extremelab.tech/admin/reports#" aria-controls="reports_table" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="reports_table_next"><a href="https://radiology.extremelab.tech/admin/reports#" aria-controls="reports_table" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+            </div>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>
+<div class="modal fade" id="print_barcode_modal" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Print barcode</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <form action="https://radiology.extremelab.tech/admin/reports" method="POST" id="print_barcode_form" target="_blank" novalidate="novalidate">
+            <input type="hidden" name="_token" value="HdhAKrhVtNgNr8kv5BWmLxQoZ9cxh9t3F48APRog">            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="number">Number of samples</label>
+                            <input type="number" id="number" name="number" placeholder="Number of samples" class="form-control" value="1" min="1" required="">
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Print</button>
+            </div>
+        </form>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>{% endblock content %}

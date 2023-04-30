@@ -1,0 +1,348 @@
+{% extends 'layouts/dashboard_base.html' %}
+{% block content %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 651.844px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">
+                    <i class="fa fa-list"></i>
+                    Tests Price List
+                </h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="{% url 'account:login_base' %}">Home</a></li>
+                    <li class="breadcrumb-item active">Tests Price List</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <div class="card card-primary card-outline">
+    <div class="card-header">
+        <h3 class="card-title">
+            Tests Table
+        </h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+
+        <!-- Tool -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="accordion">
+                    <div class="card card-info">
+                        <a data-toggle="collapse" data-parent="#accordion" href="https://radiology.extremelab.tech/admin/prices/tests#collapseOne" class="btn btn-primary collapsed" aria-expanded="false">
+                            <i class="fas fa-file-excel"></i>
+                            Import / Export
+                        </a>
+                        <div id="collapseOne" class="panel-collapse in collapse">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-12 text-center">
+                                        <a href="https://radiology.extremelab.tech/admin/tests_prices_export" class="btn btn-success">
+                                            <i class="fa fa-file-excel"></i>
+                                            Export
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <!-- import form -->
+                                        <form action="https://radiology.extremelab.tech/admin/tests_prices_import" method="POST" enctype="multipart/form-data" novalidate="novalidate">
+                                            <input type="hidden" name="_token" value="HdhAKrhVtNgNr8kv5BWmLxQoZ9cxh9t3F48APRog">                                            <div class="row mt-3">
+                                            <div class="col-lg-12">
+                                                <div class="card card-primary">
+                                                <div class="card-header">
+                                                    <h5 class="card-title">Import tests</h5>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="exampleInputFile" name="import">
+                                                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <button type="submit" class="btn btn-primary">
+                                                    <i class="fa fa-check"></i>
+                                                    Import
+                                                    </button>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </form>
+                                        <!-- /import form -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- \Tool -->
+
+        <div class="row">
+            <div class="col-lg-12  p-0">
+                <!-- Tests Prices Form -->
+                <form method="POST" action="https://radiology.extremelab.tech/admin/prices/tests" novalidate="novalidate">
+                    <input type="hidden" name="_token" value="HdhAKrhVtNgNr8kv5BWmLxQoZ9cxh9t3F48APRog">                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-4"><div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records</label></div></div><div class="col-sm-4"><div class="dt-buttons btn-group flex-wrap">          <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" type="button" title="Copy"><span><i class="fas fa-copy"></i> Copy</span></button> <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" type="button" title="Excel"><span><i class="fas fa-file-excel"></i> Excel</span></button> <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" type="button" title="CSV"><span><i class="fas fa-file-csv"></i> CVS</span></button> <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" type="button" title="PDF"><span><i class="fas fa-file-pdf"></i> PDF</span></button> <div class="btn-group"><button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis" tabindex="0" aria-controls="DataTables_Table_0" type="button" title="PDF" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-eye"></i></span></button></div> </div></div><div class="col-sm-4"><div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="DataTables_Table_0"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="DataTables_Table_0" class="table table-striped table-hover table-bordered datatable dataTable" width="100%" role="grid" aria-describedby="DataTables_Table_0_info" style="width: 100%;">
+                        <thead>
+                            <tr role="row"><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 969px;">Test</th><th width="200px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 200px;">Price</th></tr>
+                        </thead>
+                    
+                            <tbody>
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                            <tr role="row" class="odd">
+                                        <td>Radiology</td>
+                                        <td>
+                                            <div class="input-group form-group mb-3">
+                                                <input type="number" name="test[1]" class="form-control test" value="50" test_id="1" required="">
+                                                <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                      USD
+                                                  </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr><tr role="row" class="even">
+                                        <td>OPG</td>
+                                        <td>
+                                            <div class="input-group form-group mb-3">
+                                                <input type="number" name="test[4]" class="form-control test" value="206" test_id="4" required="">
+                                                <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                      USD
+                                                  </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr><tr role="row" class="odd">
+                                        <td>Complete Blood Count</td>
+                                        <td>
+                                            <div class="input-group form-group mb-3">
+                                                <input type="number" name="test[6]" class="form-control test" value="130" test_id="6" required="">
+                                                <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                      USD
+                                                  </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr><tr role="row" class="even">
+                                        <td>swdsd</td>
+                                        <td>
+                                            <div class="input-group form-group mb-3">
+                                                <input type="number" name="test[10]" class="form-control test" value="200" test_id="10" required="">
+                                                <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                      USD
+                                                  </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr><tr role="row" class="odd">
+                                        <td>Blood Group</td>
+                                        <td>
+                                            <div class="input-group form-group mb-3">
+                                                <input type="number" name="test[13]" class="form-control test" value="50" test_id="13" required="">
+                                                <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                      USD
+                                                  </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr><tr role="row" class="even">
+                                        <td>ECHO</td>
+                                        <td>
+                                            <div class="input-group form-group mb-3">
+                                                <input type="number" name="test[16]" class="form-control test" value="1000" test_id="16" required="">
+                                                <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                      USD
+                                                  </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr><tr role="row" class="odd">
+                                        <td>CBC</td>
+                                        <td>
+                                            <div class="input-group form-group mb-3">
+                                                <input type="number" name="test[18]" class="form-control test" value="40" test_id="18" required="">
+                                                <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                      USD
+                                                  </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr><tr role="row" class="even">
+                                        <td>aasd</td>
+                                        <td>
+                                            <div class="input-group form-group mb-3">
+                                                <input type="number" name="test[21]" class="form-control test" value="1321" test_id="21" required="">
+                                                <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                      USD
+                                                  </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr><tr role="row" class="odd">
+                                        <td>Prova</td>
+                                        <td>
+                                            <div class="input-group form-group mb-3">
+                                                <input type="number" name="test[24]" class="form-control test" value="150" test_id="24" required="">
+                                                <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                      USD
+                                                  </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr><tr role="row" class="even">
+                                        <td>Full blood count</td>
+                                        <td>
+                                            <div class="input-group form-group mb-3">
+                                                <input type="number" name="test[27]" class="form-control test" value="50222" test_id="27" required="">
+                                                <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                      USD
+                                                  </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr></tbody>
+                            <tfoot>
+                                <tr><th colspan="2" rowspan="1">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa fa-check"></i> Save
+                                        </button>
+                                    </th></tr>
+                            </tfoot>
+                    </table><div id="DataTables_Table_0_processing" class="dataTables_processing card" style="display: none;">Processing...</div></div></div><div class="row"><div class="col-sm-4"><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 54 records</div></div><div class="col-sm-8"><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="https://radiology.extremelab.tech/admin/prices/tests#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="https://radiology.extremelab.tech/admin/prices/tests#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/prices/tests#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/prices/tests#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/prices/tests#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/prices/tests#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/prices/tests#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="https://radiology.extremelab.tech/admin/prices/tests#" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                                            <input type="hidden" name="test[1]" value="50" id="test_1">
+                                            <input type="hidden" name="test[4]" value="206" id="test_4">
+                                            <input type="hidden" name="test[6]" value="130" id="test_6">
+                                            <input type="hidden" name="test[10]" value="200" id="test_10">
+                                            <input type="hidden" name="test[13]" value="50" id="test_13">
+                                            <input type="hidden" name="test[16]" value="1000" id="test_16">
+                                            <input type="hidden" name="test[18]" value="40" id="test_18">
+                                            <input type="hidden" name="test[21]" value="1321" id="test_21">
+                                            <input type="hidden" name="test[24]" value="150" id="test_24">
+                                            <input type="hidden" name="test[27]" value="50222" id="test_27">
+                                            <input type="hidden" name="test[41]" value="4000" id="test_41">
+                                            <input type="hidden" name="test[43]" value="500" id="test_43">
+                                            <input type="hidden" name="test[45]" value="11" id="test_45">
+                                            <input type="hidden" name="test[47]" value="1" id="test_47">
+                                            <input type="hidden" name="test[52]" value="333" id="test_52">
+                                            <input type="hidden" name="test[54]" value="160" id="test_54">
+                                            <input type="hidden" name="test[56]" value="50" id="test_56">
+                                            <input type="hidden" name="test[58]" value="100" id="test_58">
+                                            <input type="hidden" name="test[60]" value="300" id="test_60">
+                                            <input type="hidden" name="test[62]" value="15" id="test_62">
+                                            <input type="hidden" name="test[64]" value="100" id="test_64">
+                                            <input type="hidden" name="test[66]" value="800" id="test_66">
+                                            <input type="hidden" name="test[70]" value="300" id="test_70">
+                                            <input type="hidden" name="test[72]" value="1000" id="test_72">
+                                            <input type="hidden" name="test[74]" value="200" id="test_74">
+                                            <input type="hidden" name="test[79]" value="150" id="test_79">
+                                            <input type="hidden" name="test[81]" value="10" id="test_81">
+                                            <input type="hidden" name="test[83]" value="10" id="test_83">
+                                            <input type="hidden" name="test[94]" value="10" id="test_94">
+                                            <input type="hidden" name="test[96]" value="10" id="test_96">
+                                            <input type="hidden" name="test[98]" value="10" id="test_98">
+                                            <input type="hidden" name="test[100]" value="6000" id="test_100">
+                                            <input type="hidden" name="test[105]" value="588" id="test_105">
+                                            <input type="hidden" name="test[108]" value="23" id="test_108">
+                                            <input type="hidden" name="test[110]" value="25000" id="test_110">
+                                            <input type="hidden" name="test[112]" value="150" id="test_112">
+                                            <input type="hidden" name="test[114]" value="400" id="test_114">
+                                            <input type="hidden" name="test[118]" value="9" id="test_118">
+                                            <input type="hidden" name="test[123]" value="554" id="test_123">
+                                            <input type="hidden" name="test[125]" value="100" id="test_125">
+                                            <input type="hidden" name="test[127]" value="25" id="test_127">
+                                            <input type="hidden" name="test[129]" value="231" id="test_129">
+                                            <input type="hidden" name="test[131]" value="12" id="test_131">
+                                            <input type="hidden" name="test[133]" value="200" id="test_133">
+                                            <input type="hidden" name="test[137]" value="1000" id="test_137">
+                                            <input type="hidden" name="test[141]" value="10" id="test_141">
+                                            <input type="hidden" name="test[143]" value="100" id="test_143">
+                                            <input type="hidden" name="test[145]" value="30" id="test_145">
+                                            <input type="hidden" name="test[147]" value="350" id="test_147">
+                                            <input type="hidden" name="test[149]" value="10" id="test_149">
+                                            <input type="hidden" name="test[151]" value="120" id="test_151">
+                                            <input type="hidden" name="test[153]" value="11" id="test_153">
+                                            <input type="hidden" name="test[156]" value="70" id="test_156">
+                                            <input type="hidden" name="test[158]" value="1300" id="test_158">
+                                    </form>
+                <!-- /Tests Prices Form -->
+            </div>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>
+{% endblock content %}

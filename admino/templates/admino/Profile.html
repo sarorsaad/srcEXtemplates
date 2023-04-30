@@ -1,0 +1,129 @@
+{% extends 'layouts/dashboard_base.html' %}
+{% block content %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 651.844px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">
+                    <i class="fa fa-user-circle"></i>
+                    Profile
+                </h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="https://radiology.extremelab.tech/admin">Home</a></li>
+                    <li class="breadcrumb-item active">Profile</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Edit Profile</h3>
+    </div>
+    <!-- /.card-header -->
+    <form method="POST" action="https://radiology.extremelab.tech/admin/profile/update" enctype="multipart/form-data" id="profile_form" novalidate="novalidate">
+        <input type="hidden" name="_token" value="HdhAKrhVtNgNr8kv5BWmLxQoZ9cxh9t3F48APRog">        <div class="card-body">
+            <div class="col-lg-12">
+                <div class="row">
+    <div class="col-lg-12">
+        <div class="input-group form-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                  <i class="fa fa-user"></i>
+              </span>
+            </div>
+            <input type="text" class="form-control" placeholder="Name" name="name" value="Super Admin" required="">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="input-group form-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+              </span>
+            </div>
+            <input type="email" class="form-control" placeholder="Email Address" name="email" value="admin@extremelab.tech" required="">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="input-group form-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+              </span>
+            </div>
+            <input type="password" class="form-control" placeholder="Password" name="password" id="password" aria-invalid="false">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="input-group form-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+              </span>
+            </div>
+            <input type="password" class="form-control" placeholder="Password Confirmation" name="password_confirmation" id="password_confirmation">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-10">
+            
+        <div class="input-group form-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                      <i class="fas fa-signature" aria-hidden="true"></i>
+                </span>
+              </div>
+            <div class="custom-file">
+                <input type="file" accept="image/*" class="custom-file-input" id="exampleInputFile" name="signature">
+                <label class="custom-file-label" for="exampleInputFile">Choose your signature</label>
+            </div>
+        </div>
+            
+    </div>
+    <div class="col-lg-2">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h5 class="card-title" style="text-align: center!important;float: unset;">
+                    Signature
+                </h5>
+            </div>
+            <div class="card-body p-1">
+                <img class="img-thumbnail" src="./Extreme Radiology _ Profile_files/no-image.png" alt="Signature">
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="col-lg-12">
+                <button type="submit" class="btn btn-primary">
+                  <i class="fa fa-check"></i>  Save
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <!-- /.card-body -->
+</div>
+{% endblock content %}

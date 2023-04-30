@@ -1,0 +1,119 @@
+{% extends 'layouts/dashboard_base.html' %}
+{% block content %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 651.844px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">
+            <i class="fa fa-x-ray"></i>
+            Tests
+          </h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="https://radiology.extremelab.tech/admin">Home</a></li>
+            <li class="breadcrumb-item "><a href="https://radiology.extremelab.tech/admin/tests">Tests</a></li>
+            <li class="breadcrumb-item active">Create Test</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Create</h3>
+    </div>
+    <form method="POST" action="https://radiology.extremelab.tech/admin/tests" id="test_form" novalidate="novalidate">
+        <!-- /.card-header -->
+        <div class="card-body">
+            <input type="hidden" name="_token" value="HdhAKrhVtNgNr8kv5BWmLxQoZ9cxh9t3F48APRog">            <div class="row">
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" id="name" required="">
+      </div> 
+    </div>
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label for="shortcut">Shortcut</label>
+        <input type="text" class="form-control" name="shortcut" id="shortcut" required="">
+      </div>
+    </div>
+    <div class="col-lg-3">
+       <div class="form-group">
+            <label for="price">Price</label>
+            <div class="input-group form-group mb-3">
+                <input type="number" class="form-control" name="price" min="0" id="price" required="">
+                <div class="input-group-append">
+                <span class="input-group-text">
+                    USD
+                </span>
+                </div>
+            </div>
+       </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="form-group">
+             <label for="precautions">Precautions</label>
+             <textarea name="precautions" id="precautions" rows="3" class="form-control" placeholder="Precautions"></textarea>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h3 class="card-title">Test Components</h3>
+                <ul class="list-style-none">
+                    <li class="d-inline float-right">
+                        <button type="button" class="btn btn-primary btn-sm add_component">
+                            <i class="fa fa-plus"></i>
+                            Component
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-12" style="overflow-x: auto">
+                        <table class="table table-striped table-bordered table-hover components" width="100%">
+                            <thead class="btn-primary">
+                                <tr><th width="300px">Name</th>
+                                <th>Result template</th>
+                                <th width="10px"></th>
+                            </tr></thead>
+                            <tbody class="items">
+                                                                                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
+
+<input type="hidden" name="" id="count" value="0"> 
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary"> <i class="fa fa-check"></i> Save</button>
+        </div>
+    </form>
+
+</div>
+      
+
+    {% endblock content %}
+
+    <!-- /.content-wrapper -->
+   

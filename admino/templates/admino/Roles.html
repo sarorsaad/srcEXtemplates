@@ -1,0 +1,154 @@
+{% extends 'layouts/dashboard_base.html' %}
+{% block content %}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 651.844px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">
+                    <i class="fas fa-users-cog"></i>
+                    Roles
+                </h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item active">
+                      <a href="https://radiology.extremelab.tech/admin/roles#">Roles</a></li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <div class="card card-primary card-outline">
+    <div class="card-header">
+        <h3 class="card-title">Roles Table</h3>
+                <a href="https://radiology.extremelab.tech/admin/roles/create" class="btn btn-primary btn-sm float-right">
+           <i class="fa fa-plus"></i> Create
+        </a>
+            </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <div id="roles_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-4"><div class="dataTables_length" id="roles_table_length"><label>Show <select name="roles_table_length" aria-controls="roles_table" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records</label></div></div><div class="col-sm-4"><div class="dt-buttons btn-group flex-wrap">          <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="roles_table" type="button" title="Copy"><span><i class="fas fa-copy"></i> Copy</span></button> <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="roles_table" type="button" title="Excel"><span><i class="fas fa-file-excel"></i> Excel</span></button> <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="roles_table" type="button" title="CSV"><span><i class="fas fa-file-csv"></i> CVS</span></button> <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="roles_table" type="button" title="PDF"><span><i class="fas fa-file-pdf"></i> PDF</span></button> <div class="btn-group"><button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis" tabindex="0" aria-controls="roles_table" type="button" title="PDF" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-eye"></i></span></button></div> </div></div><div class="col-sm-4"><div id="roles_table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="roles_table"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="roles_table" class="table table-striped table-hover table-bordered dataTable no-footer" width="100%" role="grid" aria-describedby="roles_table_info" style="width: 100%;"><thead>
+                        <tr role="row"><th width="10px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 14px;">#</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 968px;">Role Name</th><th width="150px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 150px;">Action</th></tr>
+                    </thead>
+                    
+                    <tbody>
+    
+                    <tr role="row" class="odd"><td>1</td><td>super_admin</td><td><a href="https://radiology.extremelab.tech/admin/roles/1/edit" class="btn btn-primary btn-sm">
+        <i class="fa fa-edit"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/roles/1" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_role">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="even"><td>2</td><td>Doctor</td><td><a href="https://radiology.extremelab.tech/admin/roles/2/edit" class="btn btn-primary btn-sm">
+        <i class="fa fa-edit"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/roles/2" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_role">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="odd"><td>3</td><td>Rad Tech</td><td><a href="https://radiology.extremelab.tech/admin/roles/3/edit" class="btn btn-primary btn-sm">
+        <i class="fa fa-edit"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/roles/3" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_role">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="even"><td>4</td><td>Radiologist</td><td><a href="https://radiology.extremelab.tech/admin/roles/4/edit" class="btn btn-primary btn-sm">
+        <i class="fa fa-edit"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/roles/4" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_role">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="odd"><td>5</td><td>حامد باقری</td><td><a href="https://radiology.extremelab.tech/admin/roles/5/edit" class="btn btn-primary btn-sm">
+        <i class="fa fa-edit"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/roles/5" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_role">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="even"><td>6</td><td>receptioniste</td><td><a href="https://radiology.extremelab.tech/admin/roles/6/edit" class="btn btn-primary btn-sm">
+        <i class="fa fa-edit"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/roles/6" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_role">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="odd"><td>7</td><td>01</td><td><a href="https://radiology.extremelab.tech/admin/roles/7/edit" class="btn btn-primary btn-sm">
+        <i class="fa fa-edit"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/roles/7" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_role">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="even"><td>8</td><td>AMLAN BISWAL</td><td><a href="https://radiology.extremelab.tech/admin/roles/8/edit" class="btn btn-primary btn-sm">
+        <i class="fa fa-edit"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/roles/8" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_role">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="odd"><td>9</td><td>LABTECH</td><td><a href="https://radiology.extremelab.tech/admin/roles/9/edit" class="btn btn-primary btn-sm">
+        <i class="fa fa-edit"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/roles/9" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_role">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr><tr role="row" class="even"><td>10</td><td>AGENT</td><td><a href="https://radiology.extremelab.tech/admin/roles/10/edit" class="btn btn-primary btn-sm">
+        <i class="fa fa-edit"></i>
+    </a>
+
+    <form method="POST" action="https://radiology.extremelab.tech/admin/roles/10" class="d-inline">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm delete_role">
+            <i class="fa fa-trash"></i>
+        </button>
+    </form>
+</td></tr></tbody>
+                </table><div id="roles_table_processing" class="dataTables_processing card" style="display: none;">Processing...</div></div></div><div class="row"><div class="col-sm-4"><div class="dataTables_info" id="roles_table_info" role="status" aria-live="polite">Showing 1 to 10 of 11 records</div></div><div class="col-sm-8"><div class="dataTables_paginate paging_simple_numbers" id="roles_table_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="roles_table_previous"><a href="https://radiology.extremelab.tech/admin/roles#" aria-controls="roles_table" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="https://radiology.extremelab.tech/admin/roles#" aria-controls="roles_table" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/roles#" aria-controls="roles_table" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item next" id="roles_table_next"><a href="https://radiology.extremelab.tech/admin/roles#" aria-controls="roles_table" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+            </div>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>
+{% endblock content %}

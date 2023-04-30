@@ -1,0 +1,124 @@
+{% extends 'layouts/dashboard_base.html' %}
+{% block content %}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 651.844px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">
+            </h1><h1 class="m-0 text-dark">
+              <i class="nav-icon fa fa-user-md"></i>   
+              Doctors
+            </h1>
+          
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="https://radiology.extremelab.tech/admin">Home</a></li>
+            <li class="breadcrumb-item "><a href="https://radiology.extremelab.tech/admin/doctors">Doctors</a></li>
+            <li class="breadcrumb-item active">Create doctor</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Create Doctor</h3>
+    </div>
+    <form method="POST" action="https://radiology.extremelab.tech/admin/doctors" novalidate="novalidate">
+        <!-- /.card-header -->
+        <div class="card-body">
+            <input type="hidden" name="_token" value="HdhAKrhVtNgNr8kv5BWmLxQoZ9cxh9t3F48APRog">            <div class="row">
+  <div class="col-lg-4">
+     <div class="form-group">
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-user"></i>
+            </span>
+          </div>
+          <input type="text" class="form-control" placeholder="Doctor Name" name="name" id="name" required="">
+      </div>
+     </div>
+  </div>
+
+  <div class="col-lg-4">
+      <div class="form-group">
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+              <input type="email" class="form-control" placeholder="Email Address" name="email" id="email" required="">
+          </div>
+      </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="form-group">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fas fa-phone-alt"></i>
+              </span>
+            </div>
+            <input type="text" class="form-control" placeholder="Phone number" name="phone" id="phone" required="">
+        </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+      <div class="form-group">
+          <div class="form-group">
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Address" name="address" id="address" required="">
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="form-group">
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="fas fa-percentage"></i>
+                  </span>
+                </div>
+                <input type="number" class="form-control" placeholder="Commission" name="commission" id="commission" min="0" max="100" required="">
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  
+</div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">
+              <i class="fa fa-check"></i> Save
+            </button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
+
+

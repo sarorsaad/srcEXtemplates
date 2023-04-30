@@ -1,0 +1,141 @@
+{% extends 'layouts/dashboard_base.html' %}
+
+
+{% block content %}
+<!-- /.sidebar -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 718.844px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">
+          <i class="nav-icon fas fa-server"></i>   
+          Activity Logs
+        </h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item">
+            <a href="{% url 'account:login_base' %}">Home</a></li>
+          <li class="breadcrumb-item active">Activity logs</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <div class="card card-primary card-outline">
+  <div class="card-header">
+    <h3 class="card-title">Activity Logs Table</h3>
+          <form action="https://radiology.extremelab.tech/admin/activity_logs_clear" method="POST" novalidate="novalidate">
+        <button type="submit" class="btn btn-danger btn-sm float-right">
+          <i class="fa fa-trash"></i> Clear
+        </button>
+      </form>
+      </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <!-- filter -->
+    <div id="accordion">
+        <div class="card card-info">
+          <a data-toggle="collapse" data-parent="#accordion" href="https://radiology.extremelab.tech/admin/activity_logs#collapseOne" class="btn btn-primary collapsed" aria-expanded="false">
+            <i class="fas fa-filter"></i> Filters
+          </a>
+          <div id="collapseOne" class="panel-collapse in collapse">
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <div class="col-lg-3">
+                  <div class="form-group">
+                     <label for="filter_user">User</label>
+                     <select name="filter_user" id="filter_user" class="form-control select2 select2-hidden-accessible" data-select2-id="filter_user" tabindex="-1" aria-hidden="true">
+                        <option value="" selected="" data-select2-id="2">All</option>
+                                                    <option value="1">Super Admin</option>
+                                                    <option value="2">Doctor Ellab</option>
+                                                    <option value="3">Reza</option>
+                                                    <option value="4">rando Harry wind</option>
+                                                    <option value="5">test_doctor</option>
+                                                    <option value="6">حامد باقری</option>
+                                                    <option value="7">sdsd</option>
+                                                    <option value="8">نوع</option>
+                                                    <option value="9">qr</option>
+                                                    <option value="10">nassim</option>
+                                                    <option value="11">Dr Radiolog</option>
+                                                    <option value="12">Rakesh Meena</option>
+                                                    <option value="13">amia</option>
+                                                    <option value="14">Muhammad Sayed</option>
+                                                    <option value="15">dr1</option>
+                                                    <option value="16">doutorjjjjj</option>
+                                                    <option value="17">تيست</option>
+                                                    <option value="18">osama</option>
+                                                    <option value="19">hameed</option>
+                                                    <option value="20">JAYSRIRAM</option>
+                                                    <option value="21">SASMITA</option>
+                                                    <option value="22">SANTOSH</option>
+                                                    <option value="23">SRIRAM</option>
+                                                    <option value="24">PAPU</option>
+                                                    <option value="25">PAPUBHAI</option>
+                                                    <option value="26">Doctor</option>
+                                                    <option value="27">doctor55</option>
+                                                    <option value="28">رافد الحاج</option>
+                                                    <option value="29">dek</option>
+                                                    <option value="30">Nadja</option>
+                                                    <option value="31">Juan Solis</option>
+                                                    <option value="32">DOCTORD</option>
+                                                    <option value="33">DOCTORD f</option>
+                                                    <option value="34">Doctorf</option>
+                                                    <option value="35">Zehri</option>
+                                             </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-filter_user-container"><span class="select2-selection__rendered" id="select2-filter_user-container" role="textbox" aria-readonly="true" title="All">All</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- \filter -->
+
+    <div class="row">
+      <div class="col-12 table-responsive">
+        <div id="activity_logs_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-4"><div class="dataTables_length" id="activity_logs_table_length"><label>Show <select name="activity_logs_table_length" aria-controls="activity_logs_table" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records</label></div></div><div class="col-sm-4"><div class="dt-buttons btn-group flex-wrap">          <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="activity_logs_table" type="button" title="Copy"><span><i class="fas fa-copy"></i> Copy</span></button> <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="activity_logs_table" type="button" title="Excel"><span><i class="fas fa-file-excel"></i> Excel</span></button> <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="activity_logs_table" type="button" title="CSV"><span><i class="fas fa-file-csv"></i> CVS</span></button> <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="activity_logs_table" type="button" title="PDF"><span><i class="fas fa-file-pdf"></i> PDF</span></button> <div class="btn-group"><button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis" tabindex="0" aria-controls="activity_logs_table" type="button" title="PDF" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-eye"></i></span></button></div> </div></div><div class="col-sm-4"><div id="activity_logs_table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="activity_logs_table"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="activity_logs_table" class="table table-striped table-hover table-bordered dataTable no-footer" width="100%" role="grid" aria-describedby="activity_logs_table_info" style="width: 100%;"><thead>
+            <tr role="row"><th width="10px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 21px;">#</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 681px;">Action</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 409px;">User</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 319px;">Time</th></tr>
+          </thead>
+          
+          <tbody>
+
+          <tr role="row" class="odd"><td>694</td><td>Patient was created</td><td><a href="https://radiology.extremelab.tech/admin/users/1">Super Admin</a>
+</td><td>1 day ago</td></tr><tr role="row" class="even"><td>693</td><td>Group test was updated</td><td><a href="https://radiology.extremelab.tech/admin/users/1">Super Admin</a>
+</td><td>1 day ago</td></tr><tr role="row" class="odd"><td>692</td><td>Group test was updated</td><td><a href="https://radiology.extremelab.tech/admin/users/1">Super Admin</a>
+</td><td>1 day ago</td></tr><tr role="row" class="even"><td>691</td><td>Group test was updated</td><td><a href="https://radiology.extremelab.tech/admin/users/1">Super Admin</a>
+</td><td>1 day ago</td></tr><tr role="row" class="odd"><td>690</td><td>Group test was updated</td><td><a href="https://radiology.extremelab.tech/admin/users/1">Super Admin</a>
+</td><td>1 day ago</td></tr><tr role="row" class="even"><td>689</td><td>Group test was updated</td><td><a href="https://radiology.extremelab.tech/admin/users/1">Super Admin</a>
+</td><td>1 day ago</td></tr><tr role="row" class="odd"><td>688</td><td>Group test was updated</td><td><a href="https://radiology.extremelab.tech/admin/users/1">Super Admin</a>
+</td><td>1 day ago</td></tr><tr role="row" class="even"><td>687</td><td>Group test was updated</td><td><a href="https://radiology.extremelab.tech/admin/users/1">Super Admin</a>
+</td><td>1 day ago</td></tr><tr role="row" class="odd"><td>686</td><td>Group test was updated</td><td><a href="https://radiology.extremelab.tech/admin/users/1">Super Admin</a>
+</td><td>1 day ago</td></tr><tr role="row" class="even"><td>685</td><td>Test was created</td><td><a href="https://radiology.extremelab.tech/admin/users/1">Super Admin</a>
+</td><td>1 day ago</td></tr></tbody>
+        </table><div id="activity_logs_table_processing" class="dataTables_processing card" style="display: none;">Processing...</div></div></div><div class="row"><div class="col-sm-4"><div class="dataTables_info" id="activity_logs_table_info" role="status" aria-live="polite">Showing 1 to 10 of 694 records<div id="extwaiokist" style="display:none" v="fcoon" q="e305b5b6" c="169.4" i="176" u="72.91" s="04202306" sg="svr_04152317-ga_04202306-bai_01302309" d="1" w="false" e="}" a="2" m="BMe=" vn="3gtra"><div id="extwaigglbit" style="display:none" v="fcoon" q="e305b5b6" c="169.4" i="176" u="72.91" s="04202306" sg="svr_04152317-ga_04202306-bai_01302309" d="1" w="false" e="}" a="2" m="BMe="></div></div></div></div><div class="col-sm-8"><div class="dataTables_paginate paging_simple_numbers" id="activity_logs_table_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="activity_logs_table_previous"><a href="https://radiology.extremelab.tech/admin/activity_logs#" aria-controls="activity_logs_table" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="https://radiology.extremelab.tech/admin/activity_logs#" aria-controls="activity_logs_table" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/activity_logs#" aria-controls="activity_logs_table" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/activity_logs#" aria-controls="activity_logs_table" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/activity_logs#" aria-controls="activity_logs_table" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/activity_logs#" aria-controls="activity_logs_table" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item disabled" id="activity_logs_table_ellipsis"><a href="https://radiology.extremelab.tech/admin/activity_logs#" aria-controls="activity_logs_table" data-dt-idx="6" tabindex="0" class="page-link">…</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/admin/activity_logs#" aria-controls="activity_logs_table" data-dt-idx="7" tabindex="0" class="page-link">70</a></li><li class="paginate_button page-item next" id="activity_logs_table_next"><a href="https://radiology.extremelab.tech/admin/activity_logs#" aria-controls="activity_logs_table" data-dt-idx="8" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+      </div>
+    </div>
+  </div>
+  <!-- /.card-body -->
+</div>
+
+    
+
+    </div>
+    <!-- /.content-wrapper -->
+  
+    
+    {% endblock content %}
+
+
+    <!-- Footer -->
+   
+
+

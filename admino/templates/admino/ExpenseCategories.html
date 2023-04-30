@@ -1,0 +1,59 @@
+{% extends 'layouts/dashboard_base.html' %}
+{% block content %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 651.844px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">
+          <i class="nav-icon fas fa-dollar-sign"></i>   
+          Expense Categories
+        </h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="https://radiology.extremelab.tech/admin">Home</a></li>
+          <li class="breadcrumb-item active">Expense Categories</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <div class="card card-primary card-outline">
+  <div class="card-header">
+    <h3 class="card-title">Expense Categories Table</h3>
+      </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-12 table-responsive">
+        <div id="expense_categories_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-4"><div class="dataTables_length" id="expense_categories_table_length"><label>Show <select name="expense_categories_table_length" aria-controls="expense_categories_table" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records</label></div></div><div class="col-sm-4"><div class="dt-buttons btn-group flex-wrap">          <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="expense_categories_table" type="button" title="Copy"><span><i class="fas fa-copy"></i> Copy</span></button> <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="expense_categories_table" type="button" title="Excel"><span><i class="fas fa-file-excel"></i> Excel</span></button> <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="expense_categories_table" type="button" title="CSV"><span><i class="fas fa-file-csv"></i> CVS</span></button> <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="expense_categories_table" type="button" title="PDF"><span><i class="fas fa-file-pdf"></i> PDF</span></button> <div class="btn-group"><button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis" tabindex="0" aria-controls="expense_categories_table" type="button" title="PDF" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-eye"></i></span></button></div> </div></div><div class="col-sm-4"><div id="expense_categories_table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="expense_categories_table"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="expense_categories_table" class="table table-striped table-hover table-bordered dataTable no-footer" width="100%" role="grid" aria-describedby="expense_categories_table_info" style="width: 100%;"><thead>
+            <tr role="row"><th width="10px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 10px;">#</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 1021px;">Category</th><th width="100px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 100px;">Action</th></tr>
+          </thead>
+          
+          <tbody>
+
+          <tr class="odd"><td valign="top" colspan="3" class="dataTables_empty">No data available in table</td></tr></tbody>
+        </table><div id="expense_categories_table_processing" class="dataTables_processing card" style="display: none;">Processing...</div></div></div><div class="row"><div class="col-sm-4"><div class="dataTables_info" id="expense_categories_table_info" role="status" aria-live="polite">Showing 0 to 0 of 0 records</div></div><div class="col-sm-8"><div class="dataTables_paginate paging_simple_numbers" id="expense_categories_table_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="expense_categories_table_previous"><a href="https://radiology.extremelab.tech/admin/expense_categories#" aria-controls="expense_categories_table" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item next disabled" id="expense_categories_table_next"><a href="https://radiology.extremelab.tech/admin/expense_categories#" aria-controls="expense_categories_table" data-dt-idx="1" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+      </div>
+    </div>
+  </div>
+  <!-- /.card-body -->
+</div>
+
+          <input type="hidden" id="system_currency" value="USD">
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+
+    </div>
+    <!-- /.content-wrapper -->
+    {% endblock content %}
+    

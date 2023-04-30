@@ -1,0 +1,1092 @@
+{% extends 'layouts/dashboard_base.html' %}
+{% block content %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 651.844px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">
+                    <i class="fas fa-users-cog"></i>
+                    Roles
+                </h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item active">
+        <a href="{% url 'admino:tests_prices'  %}">Roles</a>
+                    </li>
+                    <li class="breadcrumb-item active">Create Role</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Create Role</h3>
+    </div>
+    <!-- /.card-header -->
+    <form method="POST" action="https://radiology.extremelab.tech/admin/roles" novalidate="novalidate">
+        <input type="hidden" name="_token" value="HdhAKrhVtNgNr8kv5BWmLxQoZ9cxh9t3F48APRog">        <div class="card-body">
+            <div class="col-lg-12">
+                <div class="row">
+    <div class="col-lg-12">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Role Name" required="">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+            <h5 class="card-title">
+                Permissions
+            </h5>
+            <button type="button" class="btn btn-danger btn-sm deselect_all_modules float-right">
+                <i class="fa fa-times-circle"></i>
+            </button>
+    
+            <button type="button" class="btn btn-primary btn-sm select_all_modules float-right mr-2">
+                <i class="fa fa-check-square"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">tests</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_test">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="1" id="view_test">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="create_test">Create</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="2" id="create_test">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="edit_test">Edit</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="3" id="edit_test">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="delete_test">Delete</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="4" id="delete_test">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">doctors</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_doctor">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="5" id="view_doctor">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="create_doctor">Create</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="6" id="create_doctor">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="edit_doctor">Edit</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="7" id="edit_doctor">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="delete_doctor">Delete</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="8" id="delete_doctor">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">groups tests</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_group">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="9" id="view_group">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="create_group">Create</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="10" id="create_group">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="edit_group">Edit</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="11" id="edit_group">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="delete_group">Delete</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="12" id="delete_group">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">patients</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_patient">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="13" id="view_patient">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="create_patient">Create</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="14" id="create_patient">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="edit_patient">Edit</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="15" id="edit_patient">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="delete_patient">Delete</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="16" id="delete_patient">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">tests reports</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_report">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="17" id="view_report">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="create_report">Create</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="18" id="create_report">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="edit_report">Edit</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="19" id="edit_report">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="delete_report">Delete</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="20" id="delete_report">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="sign_report">Sign</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="21" id="sign_report">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">roles</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_role">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="22" id="view_role">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="create_role">Create</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="23" id="create_role">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="edit_role">Edit</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="24" id="edit_role">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="delete_role">Delete</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="25" id="delete_role">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">users</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_user">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="26" id="view_user">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="create_user">Create</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="27" id="create_user">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="edit_user">Edit</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="28" id="edit_user">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="delete_user">Delete</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="29" id="delete_user">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">price list</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_test_prices">View tests prices</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="30" id="view_test_prices">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="update_test_prices">update tests prices</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="31" id="update_test_prices">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_culture_prices">View cultures prices</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="32" id="view_culture_prices">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="update_culture_prices">Update cultures prices</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="33" id="update_culture_prices">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">accounting reports</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_accounting_reports">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="34" id="view_accounting_reports">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="generate_report_accounting">Generate</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="35" id="generate_report_accounting">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">Bookings</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_booking">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="36" id="view_booking">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="create_booking">Create</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="37" id="create_booking">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="edit_booking">Edit</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="38" id="edit_booking">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="delete_booking">Delete</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="39" id="delete_booking">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">Branches</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_branch">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="40" id="view_branch">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="create_branch">Create</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="41" id="create_branch">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="edit_branch">Edit</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="42" id="edit_branch">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="delete_branch">Delete</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="43" id="delete_branch">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">contracts</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_contract">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="44" id="view_contract">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="create_contract">Create</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="45" id="create_contract">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="edit_contract">Edit</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="46" id="edit_contract">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="delete_contract">Delete</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="47" id="delete_contract">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">expense categories</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_expense_category">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="48" id="view_expense_category">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="create_expense_category">Create</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="49" id="create_expense_category">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="edit_expense_category">Edit</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="50" id="edit_expense_category">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="delete_expense_category">Delete</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="51" id="delete_expense_category">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">Expenses</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_expense">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="52" id="view_expense">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="create_expense">Create</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="53" id="create_expense">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="edit_expense">Edit</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="54" id="edit_expense">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="delete_expense">Delete</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="55" id="delete_expense">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">Backups</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_backup">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="56" id="view_backup">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="create_backup">Create</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="57" id="create_backup">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="delete_backup">Delete</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="58" id="delete_backup">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">setting</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_setting">Update</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="59" id="view_setting">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">Chat</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_chat">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="60" id="view_chat">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">Actvity logs</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_activity_log">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="61" id="view_activity_log">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="clear_activity_log">Clear</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="62" id="clear_activity_log">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title">Translation</h5>
+                            <button type="button" class="btn btn-danger btn-sm deselect_module float-right">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-sm  select_module float-right mr-2">
+                                <i class="fas fa-check-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="view_translation">View</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="63" id="view_translation">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-lg-9">
+                                    <label for="edit_translation">Edit</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="switch">
+                                        <input type="checkbox" name="permissions[][permission_id]" value="64" id="edit_translation">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                            </div>
+        </div>
+    </div>
+</div>            </div>
+        </div>
+        <div class="card-footer">
+            <div class="col-lg-12">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-check"></i>
+                    Save
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <!-- /.card-body -->
+</div>
+{% endblock content %}
+
+
+     

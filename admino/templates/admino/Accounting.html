@@ -1,0 +1,128 @@
+{% extends 'layouts/dashboard_base.html' %}
+{% block content %}
+
+  
+<!-- /.sidebar -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 651.844px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">
+          <i class="nav-icon fas fa-calculator"></i>
+          Accounting
+        </h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item">
+            <a href="{% url 'account:login_base' %}">Home</a></li>
+          <li class="breadcrumb-item active">Accounting</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <div class="card card-primary">
+  <!-- card-header -->
+  <div class="card-header">
+    <h3 class="card-title">Accounting Report</h3>
+  </div>
+  <!-- /.card-header -->
+  <!-- card-body -->
+  <div class="card-body">
+
+    <!-- Filtering Form -->
+    <div id="accordion">
+    <div class="card card-info">
+        <a data-toggle="collapse" data-parent="#accordion" href="https://radiology.extremelab.tech/admin/accounting#collapseOne" class="btn btn-primary collapsed" aria-expanded="false">
+            <i class="fas fa-filter"></i> Filters
+        </a>
+        <div id="collapseOne" class="panel-collapse in collapse show">
+            <div class="card-body">
+                <form method="get" action="https://radiology.extremelab.tech/admin/generate_report" novalidate="novalidate">
+                    <div class="row">
+
+                        <!-- date range -->
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <label>Date range:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="far fa-calendar-alt"></i>
+                                    </span>
+                                </div>
+                                <input type="text" name="date" class="form-control float-right datepickerrange" id="date" required="">
+                            </div>
+                        </div>
+                        <!-- \date range -->
+
+                        <!-- doctors -->
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                            <div class="form-group">
+                                <label>Doctor</label>
+                                <select class="form-control select2-hidden-accessible" name="doctors[]" id="doctor" multiple="" data-select2-id="doctor" tabindex="-1" aria-hidden="true">
+                                                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul class="select2-selection__rendered"><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" placeholder="Doctor" style="width: 171.656px;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <!-- \doctors -->
+
+                        <!-- tests -->
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                            <div class="form-group">
+                                <label>Test</label>
+                                <select class="form-control select2-hidden-accessible" name="tests[]" id="test" multiple="" data-select2-id="test" tabindex="-1" aria-hidden="true">
+                                                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="2" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul class="select2-selection__rendered"><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" placeholder="Test" style="width: 171.656px;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <!-- \tests -->
+
+                        <!-- Show in report -->
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                            <label for="">Show Details</label>
+                            <ul class="pl-0" style="list-style-type: none">
+                                <li>
+                                    <input type="checkbox" name="show_groups" id="show_groups">
+                                    <label for="show_groups">Show Group tests</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="show_expenses" id="show_expenses">
+                                    <label for="show_expenses">Show Expenses</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="show_profit" id="show_profit">
+                                    <label for="show_profit">Show Profit</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- \Show in report -->
+
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 d-flex align-items-center">
+                            <button type="submit" class="btn btn-primary form-control">
+                                <i class="fas fa-cog"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>    <!-- Filtering Form -->
+      </div>
+  <!-- /.card-body -->
+
+  <!-- card-footer -->
+    <!-- /.card-footer -->
+</div>
+
+    <!-- /.content-wrapper -->
+     
+{% endblock content %}
