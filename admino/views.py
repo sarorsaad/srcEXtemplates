@@ -69,6 +69,7 @@ def view_invoices(request):
 
 def view_patients(request):
     return render(request, 'admino/Patients.html')
+
 def view_profile(request):
     return render(request, 'admino/Profile.html')
 

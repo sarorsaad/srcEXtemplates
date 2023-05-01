@@ -46,9 +46,13 @@ data-foxclocks-statusbar-priority="normal" style="height: auto;">
         <button class="btn btn-primary btn-sm dropdown-toggle text-uppercase" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-globe"></i>  en
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="min-width: 0px">
-                       <a class="dropdown-item" href="https://radiology.extremelab.tech/change_locale/ar">ar</a>                                              <a class="dropdown-item" href="https://radiology.extremelab.tech/change_locale/es">es</a>                        <a class="dropdown-item" href="https://radiology.extremelab.tech/change_locale/it">it</a>                        <a class="dropdown-item" href="https://radiology.extremelab.tech/change_locale/ro">ro</a>                   </div>
-      </li>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="min-width: 0px">
+<a class="dropdown-item" href="https://radiology.extremelab.tech/change_locale/ar">ar</a>                                             
+ <a class="dropdown-item" href="https://radiology.extremelab.tech/change_locale/es">es</a>                     
+    <a class="dropdown-item" href="https://radiology.extremelab.tech/change_locale/it">it</a>                        
+    <a class="dropdown-item" href="https://radiology.extremelab.tech/change_locale/ro">ro</a>                  
+   </div>
+</li>
  
     </ul>
     <!-- \Left navbar links -->
@@ -60,12 +64,12 @@ data-foxclocks-statusbar-priority="normal" style="height: auto;">
       
       <!--  logout  -->
       <li class="nav-item">
-        
-        <button type="button" class="btn btn-danger btn-sm" role="button" onclick="document.getElementById(&#39;sign_out&#39;).submit();">
+        <button type="button" class="btn btn-danger btn-sm" role="button" onclick="document.getElementById('sign_out').submit();">
           <i class="fas fa-sign-out-alt"></i>
         </button>
-        <form id="sign_out" method="POST" action="https://radiology.extremelab.tech/logout" novalidate="novalidate">
-          <input type="hidden" name="_token" value="slcA2SMrKBrLQ3NOUhNrtvRJFsXYaA3wthXdEyeD">        </form>
+        <form id="sign_out" method="POST" action="account:login_base" novalidate="novalidate">
+          {% csrf_token %}
+        </form>
       </li>
       <!--  \logout  -->
     </ul>
@@ -75,17 +79,18 @@ data-foxclocks-statusbar-priority="normal" style="height: auto;">
 
     <!-- Main Sidebar Container -->
     <!-- Sidebar -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="https://radiology.extremelab.tech/patient#" class="brand-link">
-      <img src="./Extreme Radiology _ Dashboard_files/logo.png" alt="AdminLTE Logo" class="brand-image elevation-3" style="opacity: .8">
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="{% url 'doctor:' %}" class="brand-link">
+      <img src="{% static 'images/logo.png' %}" alt="AdminLTE Logo" class="brand-image elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-bold">
-        Extreme Radiology
+      AL-mickwa Radiology Ceenter
+
       </span>
-    </a>
-    <!-- \Brand Logo -->
+      </a>
+      <!-- \Brand Logo -->
     
-    <div class="sidebar os-host os-theme-light os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-transition os-host-scrollbar-vertical-hidden"><div class="os-resize-observer-host observed"><div class="os-resize-observer" style="left: 0px; right: auto;"></div></div><div class="os-size-auto-observer observed" style="height: calc(100% + 1px); float: left;"><div class="os-resize-observer"></div></div><div class="os-content-glue" style="margin: 0px -8px; width: 249px; height: 568px;"></div><div class="os-padding"><div class="os-viewport os-viewport-native-scrollbars-invisible" style=""><div class="os-content" style="padding: 0px 8px; height: 100%; width: 100%;">
+  
       <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
@@ -94,7 +99,7 @@ data-foxclocks-statusbar-priority="normal" style="height: auto;">
           <div class="info">
             <a href="https://radiology.extremelab.tech/patient#" class="d-block">
                
-                kumar k<br>
+                saror<br>
                 Code: 1593914720
                           </a>
           </div>
@@ -104,7 +109,7 @@ data-foxclocks-statusbar-priority="normal" style="height: auto;">
                   <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
       <li class="nav-item">
-        <a href="https://radiology.extremelab.tech/patient" class="nav-link active" id="dashboard">
+        <a href="{% url 'doctor:doctor_dashboard' %}" class="nav-link active" id="dashboard">
             <i class="nav-icon fas fa-th"></i>
             <p>
                 Dashboard
