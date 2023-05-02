@@ -25,7 +25,7 @@
             <nav class="mt-2">
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 <li class="nav-item">
-  <a href="{% url 'doctor:doctor_dashboard' %}" class="nav-link active" id="dashboard">
+  <a href="{% url 'doctor:doctor_dashboard' %}" class="nav-link " id="dashboard">
       <i class="nav-icon fas fa-th"></i>
       <p>
           Dashboard
@@ -34,7 +34,7 @@
 </li>
 
 <li class="nav-item">
-  <a href="https://radiology.extremelab.tech/patient/profile" class="nav-link" id="profile">
+  <a href="{% url 'doctor:doctor_profile' %}" class="nav-link" id="profile">
     <i class="nav-icon fas fa-user-circle"></i>
     <p>
       Profile
@@ -42,8 +42,18 @@
   </a>
 </li>
 
+
 <li class="nav-item">
-  <a href="https://radiology.extremelab.tech/patient/groups" class="nav-link" id="groups">
+    <a href="{% url 'doctor:booking' %}" class="nav-link" id="bookings">
+      <i class="nav-icon fas fa-calendar"></i>
+      <p>
+        Requests
+      </p>
+    </a>
+  </li>
+  
+<li class="nav-item">
+  <a href="{% url 'doctor:reports' %}" class="nav-link" id="groups">
     <i class="nav-icon fas fa-flask"></i>
     <p>
       Reports
@@ -52,7 +62,7 @@
 </li>
 
 <li class="nav-item">
-  <a href="https://radiology.extremelab.tech/patient/tests_library" class="nav-link" id="tests_library">
+  <a href="{% url 'doctor:tests_library' %}" class="nav-link" id="tests_library">
     <i class="fas fa-book-medical nav-icon"></i>
     <p>
       Tests Library
@@ -60,23 +70,9 @@
   </a>
 </li>
 
-<li class="nav-item">
-  <a href="https://radiology.extremelab.tech/patient/bookings" class="nav-link" id="bookings">
-    <i class="nav-icon fas fa-calendar"></i>
-    <p>
-      Booking
-    </p>
-  </a>
-</li>
 
-<li class="nav-item">
-  <a href="https://radiology.extremelab.tech/patient/branches" class="nav-link" id="branches">
-    <i class="fas fa-map-marked-alt nav-icon"></i>
-    <p>
-      Our Branches
-    </p>
-  </a>
-</li>
+
+
 </ul>
 </nav>                <!-- \Patient sidebar -->
 <!-- /.sidebar-menu -->
