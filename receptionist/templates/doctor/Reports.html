@@ -1,0 +1,147 @@
+{% extends 'doctor_base.html' %}
+
+
+{% block content %}>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 406.844px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">
+            <i class="fas fa-flask"></i>
+            Reports
+          </h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="https://radiology.extremelab.tech/patient">Home</a></li>
+            <li class="breadcrumb-item active">Reports</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Reports list</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <div id="accordion">
+        <!-- we are adding the .class so bootstrap.js collapse plugin detects it -->
+        <div class="card card-info">
+          <a data-toggle="collapse" data-parent="#accordion" href="https://radiology.extremelab.tech/patient/groups#collapseOne" class="btn btn-primary collapsed" aria-expanded="false">
+            <i class="fas fa-filter"></i> Filters
+          </a>
+          <div id="collapseOne" class="panel-collapse in collapse">
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <div class="col-lg-3">
+                  <div class="form-group">
+                     <label for="filter_status">Status</label>
+                     <select name="filter_status" id="filter_status" class="form-control select2 select2-hidden-accessible" data-select2-id="filter_status" tabindex="-1" aria-hidden="true">
+                        <option value="" selected="" data-select2-id="2">All</option>
+                        <option value="1">Done</option>
+                        <option value="0">Pending</option>
+                     </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-filter_status-container"><span class="select2-selection__rendered" id="select2-filter_status-container" role="textbox" aria-readonly="true" title="All">All</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 table-responsive">
+          <div id="patient_groups_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-4"><div class="dataTables_length" id="patient_groups_table_length"><label>Show <select name="patient_groups_table_length" aria-controls="patient_groups_table" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records</label></div></div><div class="col-sm-4"><div class="dt-buttons btn-group flex-wrap">          <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="patient_groups_table" type="button" title="Copy"><span><i class="fas fa-copy"></i> Copy</span></button> <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="patient_groups_table" type="button" title="Excel"><span><i class="fas fa-file-excel"></i> Excel</span></button> <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="patient_groups_table" type="button" title="CSV"><span><i class="fas fa-file-csv"></i> CVS</span></button> <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="patient_groups_table" type="button" title="PDF"><span><i class="fas fa-file-pdf"></i> PDF</span></button> <div class="btn-group"><button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis" tabindex="0" aria-controls="patient_groups_table" type="button" title="PDF" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-eye"></i></span></button></div> </div></div><div class="col-sm-4"><div id="patient_groups_table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="patient_groups_table"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="patient_groups_table" class="table table-striped table-bordered dataTable no-footer" width="100%" role="grid" aria-describedby="patient_groups_table_info" style="width: 100%;"><thead>
+            <tr role="row"><th width="20px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 19.9531px;">#</th><th width="150px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 149.266px;">Date</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 210.875px;">Total</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 149.234px;">Paid</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 210.859px;">Due</th><th width="10px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 31.9844px;">Done</th><th width="80px" class="sorting_disabled" rowspan="1" colspan="1" style="width: 79.8281px;">Action</th></tr>
+            </thead>
+            
+            <tbody>
+              
+            <tr role="row" class="odd"><td>2</td><td>09-10-2021 04:35</td><td>100 USD</td><td>0 USD</td><td>100 USD</td><td><div class="text-center"><i class="fa fa-check-double text-success"></i></div>
+</td><td><a href="https://radiology.extremelab.tech/uploads/pdf/1633754135.pdf" class="btn btn-danger btn-sm">
+        <i class="fa fa-print"></i>
+    </a>
+
+    <a href="https://radiology.extremelab.tech/uploads/pdf/1633755233.pdf" class="btn btn-primary btn-sm">
+        <i class="fa fa-flask"></i>
+    </a>
+</td></tr><tr role="row" class="even"><td>4</td><td>26-10-2021 22:08</td><td>100 USD</td><td>0 USD</td><td>100 USD</td><td><div class="text-center"><i class="fa fa-check-double text-success"></i></div>
+</td><td><a href="https://radiology.extremelab.tech/uploads/pdf/1635286094.pdf" class="btn btn-danger btn-sm">
+        <i class="fa fa-print"></i>
+    </a>
+
+    <a href="https://radiology.extremelab.tech/uploads/pdf/1635286143.pdf" class="btn btn-primary btn-sm">
+        <i class="fa fa-flask"></i>
+    </a>
+</td></tr><tr role="row" class="odd"><td>9</td><td>01-11-2021 21:52</td><td>162 USD</td><td>0 USD</td><td>162 USD</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><a href="https://radiology.extremelab.tech/uploads/pdf/1635803539.pdf" class="btn btn-danger btn-sm">
+        <i class="fa fa-print"></i>
+    </a>
+
+</td></tr><tr role="row" class="even"><td>17</td><td>09-11-2021 05:20</td><td>477 USD</td><td>0 USD</td><td>477 USD</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><a href="https://radiology.extremelab.tech/uploads/pdf/1636435229.pdf" class="btn btn-danger btn-sm">
+        <i class="fa fa-print"></i>
+    </a>
+
+</td></tr><tr role="row" class="odd"><td>19</td><td>09-11-2021 06:51</td><td>530 USD</td><td>0 USD</td><td>530 USD</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><a href="https://radiology.extremelab.tech/uploads/pdf/1636440688.pdf" class="btn btn-danger btn-sm">
+        <i class="fa fa-print"></i>
+    </a>
+
+</td></tr><tr role="row" class="even"><td>22</td><td>09-11-2021 12:37</td><td>90 USD</td><td>0 USD</td><td>90 USD</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><a href="https://radiology.extremelab.tech/uploads/pdf/1636461471.pdf" class="btn btn-danger btn-sm">
+        <i class="fa fa-print"></i>
+    </a>
+
+</td></tr><tr role="row" class="odd"><td>23</td><td>09-11-2021 13:43</td><td>1520 USD</td><td>0 USD</td><td>1520 USD</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><a href="https://radiology.extremelab.tech/uploads/pdf/1636465403.pdf" class="btn btn-danger btn-sm">
+        <i class="fa fa-print"></i>
+    </a>
+
+</td></tr><tr role="row" class="even"><td>28</td><td>09-11-2021 17:18</td><td>50 USD</td><td>0 USD</td><td>50 USD</td><td><div class="text-center"><i class="fa fa-check-double text-success"></i></div>
+</td><td><a href="https://radiology.extremelab.tech/uploads/pdf/1636478339.pdf" class="btn btn-danger btn-sm">
+        <i class="fa fa-print"></i>
+    </a>
+
+    <a href="https://radiology.extremelab.tech/uploads/pdf/1636545593.pdf" class="btn btn-primary btn-sm">
+        <i class="fa fa-flask"></i>
+    </a>
+</td></tr><tr role="row" class="odd"><td>34</td><td>10-11-2021 13:53</td><td>100 USD</td><td>0 USD</td><td>100 USD</td><td><div class="text-center"><i class="fa fa-check-double text-success"></i></div>
+</td><td><a href="https://radiology.extremelab.tech/uploads/pdf/1636552397.pdf" class="btn btn-danger btn-sm">
+        <i class="fa fa-print"></i>
+    </a>
+
+    <a href="https://radiology.extremelab.tech/uploads/pdf/1636727427.pdf" class="btn btn-primary btn-sm">
+        <i class="fa fa-flask"></i>
+    </a>
+</td></tr><tr role="row" class="even"><td>35</td><td>11-11-2021 00:09</td><td>1062 USD</td><td>0 USD</td><td>1062 USD</td><td><div class="text-center"><i class="fa fa-times-circle text-danger"></i></div>
+</td><td><a href="https://radiology.extremelab.tech/uploads/pdf/1636589360.pdf" class="btn btn-danger btn-sm">
+        <i class="fa fa-print"></i>
+    </a>
+
+</td></tr></tbody>
+          </table><div id="patient_groups_table_processing" class="dataTables_processing card" style="display: none;">Processing...</div></div></div><div class="row"><div class="col-sm-4"><div class="dataTables_info" id="patient_groups_table_info" role="status" aria-live="polite">Showing 1 to 10 of 42 records</div></div><div class="col-sm-8"><div class="dataTables_paginate paging_simple_numbers" id="patient_groups_table_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="patient_groups_table_previous"><a href="https://radiology.extremelab.tech/patient/groups#" aria-controls="patient_groups_table" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="https://radiology.extremelab.tech/patient/groups#" aria-controls="patient_groups_table" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/patient/groups#" aria-controls="patient_groups_table" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/patient/groups#" aria-controls="patient_groups_table" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/patient/groups#" aria-controls="patient_groups_table" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="https://radiology.extremelab.tech/patient/groups#" aria-controls="patient_groups_table" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item next" id="patient_groups_table_next"><a href="https://radiology.extremelab.tech/patient/groups#" aria-controls="patient_groups_table" data-dt-idx="6" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+        </div>
+      </div>
+    </div>
+    <!-- /.card-body -->
+  </div>
+
+          <input type="hidden" id="system_currency" value="USD">
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+
+    </div>
+    <!-- /.content-wrapper -->
+    
+    {% endblock content %}

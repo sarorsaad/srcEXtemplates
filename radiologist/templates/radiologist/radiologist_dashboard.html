@@ -1,7 +1,8 @@
-{% extends 'layouts/dashboard_users.html' %}
+{% extends 'radiologist_base.html' %}
 
 
 {% block content %}
+<!-- /.sidebar -->
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper" style="min-height: 406.844px;">
       <!-- Content Header (Page header) -->
@@ -11,7 +12,7 @@
         <div class="col-sm-6">
           <h1 class="m-0 text-dark">
             <i class="nav-icon fas fa-th"></i>
-            &nbsp;doctor -Dashboard</h1>
+            &nbsp;radiologist -Dashboard</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -84,4 +85,8 @@
   <!-- /.row -->
   <div id="sidebar-overlay"></div></div>
 <!-- /.content-wrapper -->
+
+<input type="hidden" id="system_currency" value="USD">
+</div><!-- /.container-fluid -->
+</section>
 {% endblock content %}

@@ -5,7 +5,7 @@ def doctor_dashboard(request):
     return render(request, 'doctor/doctor_dashboard.html', context={})
 
 
-from django.shortcuts import render
+
 
 def booking(request):
     return render(request, 'doctor/Booking.html')
