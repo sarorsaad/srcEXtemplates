@@ -14,5 +14,11 @@ urlpatterns = [
     path('doctor_dashboard/', views.doctor_dashboard, name='doctor_dashboard'),
     path('receptionist_dashboard/', views.receptionist_dashboard, name='receptionist_dashboard'),
     path('radiologist_dashboard/', views.radiologist_dashboard, name='radiologist_dashboard'),
-    
+   #################################
+   #######################
+    path('arabic-login/', views.arabic_login, name='arabic_login'),
+    path('arabic/create-account/', 
+             views.arabic_create_account, name='arabic_create_account'), 
+     path('arabic/send-resetting-mail/', views.arabic_send_resetting_mail, 
+          name='arabic_send_resetting_mail'),
 ]

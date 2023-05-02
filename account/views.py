@@ -53,3 +53,17 @@ def receptionist_dashboard(request):
 
 def radiologist_dashboard(request):
     return render(request, 'radiologist_dashboard.html')
+
+
+
+################################################
+##################################
+def arabic_login(request):
+    return render(request, 'account/arabicLogin.html')
+
+
+def arabic_create_account(request):
+    return render(request, 'account/arabic_create_account.html')
+
+def arabic_send_resetting_mail(request):
+    return render(request, 'account/arabic_Send resetting.html')
