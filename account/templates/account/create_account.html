@@ -2,11 +2,11 @@
 
 
     {% block content %}
-                <form method="POST" action="{% url 'account:create_account' %}" class="validate-form" id="register_form"  
+                <form method="post" action="{% url 'account:create_account' %}" class="validate-form" id="register_form"  
                  id= "registration-form" >
                  {% csrf_token %}
                    <span class="login100-form-title p-b-20 p-t-20">
-                       Create Account
+                       Create Account for Doctor
                    </span>
                    
                    <div class="wrap-input100 validate-input ">
@@ -14,31 +14,70 @@
                        <span class="focus-input100"></span>
                        <span class="label-input100">Name</span>
                    </div>
+
+                 
+
+                   <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" name="phonenumber" value="" required="">
+                    <span class="focus-input100"></span>
+                    <span class="label-input100">Phone Number</span>
+                </div>
+
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="date" name="birthdate" value="{{ doctor.birthdate|date:'Y-m-d' }}" required>
+                    <span class="focus-input100"></span>
+                    <span class="label-input100">Birthdate</span>
+                </div>
+                
+                <div class="validate-input">
+                    <div class="row form-group">
+                      <label for="gender" class="col-lg-3 col-md-3 col-sm-3">Gender</label>
+                      <div class="col-lg-9 col-md-9 col-sm-9 d-inline">
+                        <select name="gender" id="gender" required="">
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  
                
-                   <div class="validate-input">
-                   <div class="row form-group">
-                           <h5 class="col-lg-3 col-md-3 col-sm-3">
-                               Role      
-               </h5>
-               <div class="col-lg-9 col-md-9 col-sm-9 d-inline">
-               <input type="radio" name="Role" id="Admin" value="Admin"
-                required=""> <label for="Admin" class="d-inline">Admin</label>
-               <br>
-               <input type="radio" name="Role" id="Doctor" value="Doctor" required=""> 
-               <label for="Doctor" class="d-inline">Doctor<br>
-               <input type="radio" name="Role" id="Receptionist" value="Receptionist" required="">
-                <label for="Receptionist" class="d-inline">Receptionist</label><br>
-               <input type="radio" name="Role" id="fTechnicians" value="Technicians" required=""> 
-               <label for="Technicians" class="d-inline">Technicians<br>
-               <input type="radio" name="Role" id="fRadiologist" value="Radiologist" required="">
-                <label for="fRadiologist" class="d-inline">Radiologist<br>
-               </label>
-               </div>
-               </div>
-                   </div>
+                  <div class="validate-input">
+                    <div class="row form-group">
+                      <label for="rank" class="col-lg-3 col-md-3 col-sm-3">Rank</label>
+                      <div class="col-lg-9 col-md-9 col-sm-9 d-inline">
+                        <select name="rank" id="rank" required="">
+                          <option value="Consultant">Consultant</option>
+                          <option value="Specialist">Specialist</option>
+                          <option value="Senior Registrar">Senior Registrar</option>
+                          <option value="Registrar">Registrar</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  
                
+<div class="validate-input">
+    <div class="row form-group">
+      <label for="specialty" class="col-lg-3 col-md-3 col-sm-3">Specialty</label>
+      <div class="col-lg-9 col-md-9 col-sm-9 d-inline">
+        <select name="specialty" id="specialty" required="">
+          <option value="IMC">IMC</option>
+          <option value="Surgery">Surgery</option>
+          <option value="OBG">OBG</option>
+          <option value="Pedia">Pedia</option>
+          <option value="Ortho">Ortho</option>
+          <option value="Nepherology">Nepherology</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  
+  
+   
+
                    <div class="wrap-input100 validate-input ">
-                       <input class="input100" type="text" name="phone" value="" required="">
+                       <input class="input100" type="text" name="username" value="" required="">
                        <span class="focus-input100"></span>
                        <span class="label-input100">User Name</span>
                    </div>
@@ -60,14 +99,28 @@
                    <span class="label-input100">Confirm Password</span>
                </div>
                             
-                            <a href="{% url 'account:login_base' %}" class="btn btn-primary">
-                              <button type="button" class="btn btn-primary">Create Account</button>
-                            </a>
-                  
-                              </form>
-       {% endblock %}
-                
+               <button type="submit" class="btn btn-primary">Create Account</button>
 
+</form>
+
+{% endblock %}
+
+{% if error == "no" %}
+    <script type="text/javascript">
+        alert("You have successfully signed up...");
+        window.location.href = "{% url 'account:login' %}";
+    </script>
+{% endif %}
+
+{% if error == "yes" %}
+    <script type="text/javascript">
+        alert("Something went wrong...");
+        window.location.href = "{% url 'account:login' %}";
+    </script>
+{% endif %}
+
+
+     
 
 
 

@@ -19,8 +19,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('', include('radio.urls',namespace='radio')),
     path('admin/', admin.site.urls),
-    path('', include('account.urls',namespace='account')),
+    path('account/', include('account.urls',namespace='account')),
     path('admino/', include('admino.urls',namespace='admino')),
     
     path('doctor/', include('doctor.urls', namespace='doctor')),

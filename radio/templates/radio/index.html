@@ -1,0 +1,41 @@
+{% extends 'layouts/login_base.html' %}	
+
+
+
+{% block content %}
+
+<h1> Welcome to Radiology Department </h1>
+<!-- Sidebar Menu -->
+  <!-- Admin sidebar -->
+  <nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    <li class="nav-item">
+      <a href="{% url 'radio:homepage' %}" class="nav-link " id="dashboard">
+          <i class="nav-icon fas fa-th"></i>
+          <p>
+              Home
+          </p>
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a href="{% url 'account:login' %}" class="nav-link" id="profile">
+        <i class="nav-icon fas fa-user-circle"></i>
+        <p>
+          Login
+        </p>
+      </a>
+    </li>
+    
+    
+    <li class="nav-item">
+        <a href="{% url 'account:create_account' %}" class="nav-link" id="bookings">
+          <i class="nav-icon fas fa-calendar"></i>
+          <p>
+            Create Account for Doctor
+          </p>
+        </a>
+      </li>
+      
+    
+{% endblock %}

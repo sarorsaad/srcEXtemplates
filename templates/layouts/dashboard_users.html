@@ -107,17 +107,13 @@ data-gr-ext-installed="" style="height: auto;">
       <!--  logout  -->
       <li class="nav-item">
         
-        <button type="button" class="btn btn-danger btn-sm" 
-        role="button" 
-        onclick="document.getElementById(&#39;sign_out&#39;).submit();">
-          <i class="fas fa-sign-out-alt"></i>
-        </button>
-        <form id="sign_out" method="POST" 
-        action="https://radiology.extremelab.tech/admin/logout" 
-        novalidate="novalidate">
-          <input type="hidden" name="_token" 
-          value="JT9VBE8hEf6Ev3ZSq1tff1FsQv3QZar3lAKD6jA1">       
-         </form>
+        <form id="sign_out" method="POST" action="{% url 'account:logout' %}" novalidate="novalidate">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger btn-sm" role="button">
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
+        </form>
+        
       </li>
       <!--  \logout  -->
     </ul>
